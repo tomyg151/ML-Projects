@@ -4,7 +4,6 @@ This project focuses on predicting daily sales units for Adidas US retail data u
 ## Project Overview
 In the retail industry, balancing between stockouts and overstocking is a critical challenge. This project compares a classical statistical approach (ARIMAX) with a modern gradient boosting machine learning model (XGBoost) to determine the most effective method for daily sales prediction.
 
----
 ## Dataset
 The analysis is based on the Adidas Sales Dataset, which includes sales records across the United States for the years 2020-2021.
 The original dataset contained raw transaction-level data with 13 columns including retailers, regions, and product types.
