@@ -3,12 +3,12 @@ This project focuses on predicting daily sales units for Adidas US retail data u
 
 ## Project Overview
 In the retail industry, balancing between stockouts and overstocking is a critical challenge. This project compares a classical statistical approach (ARIMAX) with a modern gradient boosting machine learning model (XGBoost) to determine the most effective method for daily sales prediction.
-
+---
 ## Dataset
 The analysis is based on the Adidas Sales Dataset, which includes sales records across the United States for the years 2020-2021.
 The original dataset contained raw transaction-level data with 13 columns including retailers, regions, and product types.
 * **Source:** [Adidas Sales Dataset on Kaggle](https://www.kaggle.com/datasets/heemalichaudhari/adidas-sales-dataset)
-
+---
 ## Project Pipeline & Decision Making
 ### 1. Data Cleaning & Preprocessing Steps:
 1. **Time Aggregation:** The raw transactional data was grouped by `Invoice Date` to create a daily sales time-series.
@@ -19,7 +19,7 @@ The original dataset contained raw transaction-level data with 13 columns includ
    * `is_holiday` (Binary)
    * `end_of_month` (Binary)
 4.**Aggregation:** Data was resampled to a daily level to identify high-frequency patterns.
-
+**Ensure the is_holiday logic is applied to the Invoice Date before training**
 
 * **Key Features:**
 Beyond basic sales data, several exogenous features were engineered to improve forecasting:
@@ -28,7 +28,7 @@ Beyond basic sales data, several exogenous features were engineered to improve f
 * `day_of_month`: Capturing within-month cyclicality.
 * `end_of_month`: Binary flag for salary-driven peaks.
 * `is_holiday`: Binary flag for US public holidays.
- 
+ ---
 ## Methodology
 The project follows a standard Data Science pipeline:
 1. **Exploratory Data Analysis (EDA):** Identifying monthly seasonality.
@@ -44,7 +44,7 @@ The project follows a visualization-first approach:
 * **Model Comparison:** Plotting predicted vs. actual sales to visualize where XGBoost captures spikes that ARIMAX misses.
 
 
-
+---
 ## Results
 ### Business Metrics Summary
 The model performance was evaluated using standard regression metrics. XGBoost showed a significant improvement in capturing market volatility.
@@ -78,7 +78,7 @@ A key finding of this project is how differently each model interprets the featu
 The chart below visualizes why XGBoost assigned nearly 89% importance to the `day_of_month` variable. Unlike the statistical model, the ML model identified clear, recurring sales peaks throughout the month.
 <img width="1409" height="418" alt="image" src="https://github.com/user-attachments/assets/3cc98c32-3a2e-4899-abf9-62620b628951" />
 > **Insight:** Notice how sales aren't random; there are specific cycles within the 31-day window. This is exactly what the Gradient Boosting model captured to outperform the ARIMAX baseline.
-
+---
 ## How to Run the Project
 ### Prerequisites
 You can run the analysis directly in your browser without any local setup:
@@ -87,17 +87,33 @@ You can run the analysis directly in your browser without any local setup:
 3. **Execution:** Run all cells (Runtime -> Run all) to see the data processing, visualizations, and model comparisons.
 ## Installation (Local)
 If you prefer to run it locally, run:
-```python
-pip install pandas numpy xgboost
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-from statsmodels.tsa.statespace.sarimax import SARIMAX
-from xgboost import XGBRegressor
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels xgboost scipy
 ```
-**Ensure the is_holiday logic is applied to the Invoice Date before training**
+### Libraries Used:
+* **Data Manipulation:** pandas, numpy
+
+* **Visualization:** matplotlib, seaborn
+
+* **Statistical Modeling:** statsmodels (for ARIMAX)
+
+* **Machine Learning:** scikit-learn, xgboost (Gradient Boosting)
+
+* **Signal Processing:** scipy (for peak detection in seasonality)
 
 
+## 👥 Authors & Acknowledgments
+
+This project was developed as part of the **Supervised Machine Learning** course.
+
+* **Project Authors:** Tom Grundland & Ido Armanchik
+* **Lecturer:** Dr. Sarah Ita Levitan
+* **Academic Institution:** Bar-Ilan University, Department of Information Science
+
+---
+
+### 🙏 Thank You
+Thank you for taking the time to explore this project! If you have any questions or suggestions regarding the methodology or the results, feel free to reach out or open an issue in this repository.
+
+**Happy Coding! 🚀**
 
