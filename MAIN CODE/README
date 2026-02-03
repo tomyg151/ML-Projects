@@ -33,7 +33,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn statsmodels xgboost ope
 
 
 Step 4: Add the Dataset
-Download the Adidas.xlsx file from Kaggle: [Adidas Sales Dataset on Kaggle](https://www.kaggle.com/datasets/heemalichaudhari/adidas-sales-dataset).
+Download the Adidas.xlsx file from Kaggle: (https://www.kaggle.com/datasets/heemalichaudhari/adidas-sales-dataset).
 
 Place the file inside the project folder you extracted in Step 2.
 
