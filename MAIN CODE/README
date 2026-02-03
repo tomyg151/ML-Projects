@@ -1,0 +1,43 @@
+## 📁 Project Structure
+
+The project is designed with a modular architecture to ensure clean code, reusability, and easy maintenance.
+
+```text
+├── main.py              # 🧠 The Core: Orchestrates the entire pipeline (Loading -> Preprocessing -> Modeling).
+├── data_manager.py      # 🧹 The Processor: Handles raw Excel loading, date conversion, and COVID-19 filtering.
+├── models.py            # 🤖 The Brain: Contains specialized logic for ARIMAX and XGBoost (Gradient Boosting).
+├── visualizer.py        # 📊 The Artist: Generates all EDA charts and final performance comparisons.
+└── Adidas.xlsx          # 📄 The Data: Original raw sales dataset from Kaggle.
+
+
+---
+
+### 2. Beginner-Friendly Setup (Step-by-Step)
+
+```markdown
+## 🚀 How to Run (Step-by-Step)
+
+Follow these simple steps to reproduce the analysis on your local machine:
+
+### Step 1: Install Python
+* Download and install Python (Version 3.8 or higher) from [python.org](https://www.python.org/).
+
+### Step 2: Download the Project
+1. Click the green **Code** button at the top of this repository.
+2. Select **Download ZIP** and extract the files to a folder on your computer.
+
+### Step 3: Install Required Libraries
+Open your terminal (Command Prompt on Windows / Terminal on Mac) and run the following command to install all necessary "tools":
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn statsmodels xgboost openpyxl
+
+
+Step 4: Add the Dataset
+Download the Adidas.xlsx file from Kaggle: [Adidas Sales Dataset on Kaggle](https://www.kaggle.com/datasets/heemalichaudhari/adidas-sales-dataset).
+
+Place the file inside the project folder you extracted in Step 2.
+
+Step 5: Execute the Analysis
+In your terminal, navigate to the folder and run:
+
+python main.py
